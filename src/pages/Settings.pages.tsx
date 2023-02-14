@@ -7,9 +7,9 @@ if (typeof window !== "undefined") {
 }
 
 const Settings = () => {
-    const [menuSelected, setMenuSelected] = useState("Security");
-    const [searchText, setSearchText] = useState("");
-    const menuClick = (menu) => {
+    const [menuSelected, setMenuSelected] = useState<string>("Security");
+    const [searchText, setSearchText] = useState<string>("");
+    const menuClick = (menu: string) => {
         setMenuSelected(menu);
     }
     const menuList = [
@@ -51,10 +51,10 @@ const Settings = () => {
                 <AiFillQuestionCircle size={15} color="#D7DBE2" />
             </div>
             <div className='flex flex-col items-start w-full md:flex-row'>
-                <div className='mt-[55px] mr-10 w-full'>
+                <div className='mt-[55px] mr-10 w-full md:w-[40%]'>
                     <div className='flex flex-row items-center space-x-2 px-1 border-[1px] border-[#CACCCF] '>
                         <AiOutlineSearch color='CACCCF' size={30} />
-                        <input type="text" placeHolder="Search in Settings" className='outline-0 p-2' value={searchText} onChange={(e) => setSearchText(e.target.value)} />
+                        <input type="text" placeholder="Search in Settings" className='outline-0 p-2' value={searchText} onChange={(e) => setSearchText(e.target.value)} />
                     </div>
                     {filteredMenu.map((menu, index) => (
                         <div key={index} className={`flex flex-row justify-start cursor-pointer py-2 px-4 border-[1px] text-[#9B9D9D] font-medium ${menuSelected === menu && 'border-l-[2px] border-l-[#3F85D3] text-[#3F85D3] bg-[#FAFAFA]'}`} onClick={() => menuClick(menu)}>
@@ -62,7 +62,7 @@ const Settings = () => {
                         </div>
                     ))}
                 </div>
-                <div className='flex flex-col  w-[100%]'>
+                <div className='flex flex-col w-full'>
                     <section className='mb-5 flex flex-col'>
                         <span className='mb-5 mt-5 font-medium text-[20px] sm:mt-0'>Security</span>
                         <div>

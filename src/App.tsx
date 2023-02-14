@@ -1,5 +1,5 @@
+import React from 'react';
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import Settings from './pages/Settings.pages';
 import { ToastContainer } from 'react-toastify';
